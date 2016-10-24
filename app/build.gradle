@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "buyhatke.com.sms"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -25,8 +25,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile 'com.google.android.gms:play-services:8.4.0'
+   compile 'com.google.android.gms:play-services-auth:8.4.0'
     compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.google.android.gms:play-services-drive:8.4.0'
 
 
 
