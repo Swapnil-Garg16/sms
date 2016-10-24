@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="buyhatke.com.sms">
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="buyhatke.com.sms.presenter.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="buyhatke.com.sms.presenter.SmsReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="buyhatke.com.sms.presenter.ReadAllSms"
+            android:label="@string/title_activity_read_all_sms"
+            android:parentActivityName="buyhatke.com.sms.presenter.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="buyhatke.com.sms.presenter.MainActivity" />
+        </activity>
+        <activity
+            android:name="buyhatke.com.sms.presenter.SendSms"
+            android:label="@string/title_activity_send_sms"
+            android:parentActivityName="buyhatke.com.sms.presenter.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="buyhatke.com.sms.presenter.MainActivity" />
+        </activity>
+        <activity
+            android:name="buyhatke.com.sms.presenter.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="buyhatke.com.sms.presenter.MainActivity" />
+        </activity>
+        <activity
+            android:name="buyhatke.com.sms.presenter.UploadData"
+            android:label="@string/title_activity_upload_data"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>
